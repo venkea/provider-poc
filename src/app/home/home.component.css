@@ -1,0 +1,39 @@
+.box {
+    margin-top: 20px;
+    padding-top: 2px;
+    height: 39px;
+    clear: both;
+    background-color: cornflowerblue;
+  }
+
+  .title {
+      text-align: center;
+      font-family: Baskerville Old Face;
+      font-weight: bolder;
+      font-size: x-large;
+  }
+
+.date-picker {
+    position: absolute;
+    /* width: 300px;
+    height: 200px;
+    z-index: 15; */
+    top: 42%;
+    left: 54%;
+    margin: -106px 0 0 -150px;
+}
+
+    .btn-primary {
+        color: #fff;
+        background-color: #6495ed;
+        border-color: #6495ed;
+    }
+
+    .mr-1 {
+        margin-left: 11px;
+    }
+
+    .generate-report {
+        margin-top: -18px;
+        margin-left: 20px;
+    }

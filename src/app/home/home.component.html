@@ -1,0 +1,79 @@
+<link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+<div class="box"><p class="title">Reports</p></div>
+
+<div class="date-text">
+    <div class="date-picker" >
+        <mat-form-field matTooltip="Shows the failed records on a date" class="date-form" appearance="fill">
+            <input matInput [matDatepicker]="picker" autocomplete="off"  [(ngModel)]="reportDate" placeholder="Select the report">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #ref
+            (closed)="toggle(ref)" [touchUi]="true" #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button *ngIf="showGenerateButton" (click) = "generateReport()" class="generate-report btn btn-primary">
+            Generate Report<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        </button>
+    </div>
+</div>
+
+<table *ngIf = "showResult" mat-table [dataSource]="listData"  multiTemplateDataRows class="mat-elevation-z8">
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm"> 
+        Status
+      </th>
+      <td mat-cell *matCellDef="let element " >
+        <div class="div1" *ngIf="element.employeeStatusBlue ==true;"></div> 
+        <div class="div2" *ngIf="element.employeeStatusGreen ==true;"></div>
+        <div class="div3" *ngIf="element.employeeStatusRed ==true;"></div> </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm"> 
+        Name
+      </th>
+      <td mat-cell *matCellDef="let element " > {{element.employeeName }} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Associate_Id">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm"> Associate Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+    </ng-container>
+    
+    
+    <ng-container matColumnDef="Email_Id">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm"> Email Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeEmail}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Mobile">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm"> Mobile</th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeNumber}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Strong Skills">
+      <th mat-header-cell *matHeaderCellDef style=" font-weight: bold; font-size: 0.5cm">Strong Skills</th>
+      <td mat-cell *matCellDef="let element " > 
+        {{element.skillRating[0].skillName}},{{element.skillRating[1].skillName}}</td> 
+    </ng-container>
+    
+    <!-- <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        </td>
+      </ng-container> -->
+    <!-- <ng-container matColumnDef="Change">
+      
+      <th mat-header-cell *matHeaderCellDef>
+        <button mat-button class="nav-item nav-link-edit" (click)=addSkill() style="background-color: palegoldenrod">Add New Associate</button >
+        </th>
+        <td mat-cell *matCellDef="let element">  
+            <button mat-button (click)=onEdit(this.element.employeeId) style="background-color: palevioletred; margin-right: 1%">Edit</button >
+            <button mat-button (click)=onDelete(this.element.employeeId) style="background-color: palegreen; margin-right: 1%">Delete</button >
+            <button mat-button (click)=onView(this.element.employeeId) style="background-color: palevioletred; margin-right: 1%">View</button >
+            <button mat-button (click)="newSkill(this.element.employeeId)" style="background-color: palegreen"> Add New skill </button>
+        </td>
+      </ng-container> -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    

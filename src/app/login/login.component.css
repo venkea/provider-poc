@@ -1,0 +1,69 @@
+
+    html,body {
+        height:100%;
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+    }
+    #Error{
+        color: darkred;
+    }
+        
+
+    input[type=text] {
+        color: #000000;
+        margin: 0;
+        background-color: #fafdff;
+        border: 1px solid #373b3d;
+        padding: 6px 0px;
+        border-radius: 3px;
+    }
+
+
+
+    input[type=password] {
+        color: #000000;
+        margin: 0;
+        background-color: #fafdff;
+        border: 1px solid #373b3d;
+        padding: 6px 0px;
+        border-radius: 3px;
+    }
+
+
+
+    .card-body {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        /* top: 20%; */
+        /* margin: auto; */
+
+    }
+
+    .login {
+        margin-left: 56px;
+    }
+    .box {
+        margin-top: 20px;
+        padding-top: 2px;
+        height: 39px;
+        clear: both;
+        background-color: cornflowerblue;
+      }
+
+      .title {
+          text-align: center;
+          font-family: Baskerville Old Face;
+          font-weight: bolder;
+          font-size: x-large;
+      }
+
+      
+
+      .btn-primary {
+        color: #fff;
+        background-color: #6495ed;
+        border-color: #007bff;
+        font-weight: 600;
+    }
