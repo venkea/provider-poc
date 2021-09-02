@@ -15,7 +15,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule} from '@angular/material/input';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table' 
+import { DatePipe } from '@angular/common'; 
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes  } from '@angular/router';
@@ -43,6 +46,8 @@ import { ReportService } from './services/report.service';
     HttpClientModule,
     MatTooltipModule,
     MatTableModule,
+    MatToolbarModule,
+    MatPaginatorModule,
     RouterModule.forRoot(
       [
        { path: '', component: LoginComponent},
@@ -52,7 +57,7 @@ import { ReportService } from './services/report.service';
   providers: [{
       provide: MatDialogRef,
       useValue: {}
-  }, ReportService],
+  }, ReportService, DatePipe],
   
   bootstrap: [AppComponent]
 })

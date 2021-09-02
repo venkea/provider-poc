@@ -37,3 +37,71 @@
         margin-top: -18px;
         margin-left: 20px;
     }
+
+
+    table {
+        width: 89%;
+
+      }
+      /* .container-fluid{
+        column-gap: 10px;
+     } */
+
+     .mat-table {
+        background: #6495ed17;
+        margin-top: 102px;
+        margin-bottom: 16px;
+        margin-left: 66px;
+    }
+    .mat-column-No {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 10% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        word-break: break-word;
+
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .mat-column-ProviderId {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 10% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        word-break: break-word;
+
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .mat-column-ErrorDescription {
+        word-wrap: break-word !important;
+        white-space: unset !important;
+        flex: 0 0 28% !important;
+        width: 28% !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        word-break: break-word;
+
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+    
+    .mat-toolbar.mat-primary {
+        color: #6495ed;
+        background: none;
+    }
