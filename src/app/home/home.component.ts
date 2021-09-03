@@ -21,11 +21,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showGenerateButton: boolean;
   loading: boolean;
   showResult: boolean;
-  displayedColumns: string[] = ['No', 'ProviderId', 'ErrorDescription'];
+  displayedColumns: string[] = ['ProviderId', 'ErrorDescription'];
   failedRecordList: any[];
   errorMessage: any;
   listEmpty = false;
   listData= new MatTableDataSource<any>();
+  errorsListPerProvider: any[];
 
   constructor(private reportService: ReportService, private datePipe: DatePipe) { 
   }
@@ -54,10 +55,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.loading = false;
         this.failedRecordList = response;
         if (this.failedRecordList.length > 0) {
+          this.errorsListPerProvider = [];
           this.showResult = true;
+          // this.failedRecordList.forEach(element => {              
+          //   this.errorsListPerProvider.push(element.description);
+          // });
         } else {
           this.showResult = false;
         }
+        console.log('This is the string array',this.errorsListPerProvider);
         this.listData = new MatTableDataSource(response);
         this.listData.paginator = this.paginator;
         if(this.failedRecordList.length <= 0) {

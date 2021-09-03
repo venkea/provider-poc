@@ -24,12 +24,14 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes  } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ReportService } from './services/report.service';
+import { TrimPipe } from './helper/trim.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    TrimPipe
   ],
   imports: [
     BrowserModule,

@@ -105,3 +105,12 @@
         color: #6495ed;
         background: none;
     }
+
+    .error-header {
+        padding-left: 80px;
+    }
+
+    dl, ol, ul {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
