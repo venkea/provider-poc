@@ -74,7 +74,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         
       },
       (error) => {  
-        console.log('error -- ', error)                            //error() callback
+        this.showResult = false;
+        console.log('error -- ', error)                         //error() callback
         console.error('Request failed with error')
         this.errorMessage = error;
         this.loading = false;

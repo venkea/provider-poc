@@ -19,7 +19,7 @@
     height: 200px;
     z-index: 15; */
     top: 42%;
-    left: 54%;
+    left: 52%;
     margin: -106px 0 0 -150px;
 }
 
@@ -113,4 +113,14 @@
     dl, ol, ul {
         margin-top: 2px;
         margin-bottom: 2px;
+    }
+
+
+    .mat-form-field {
+        width: 147px;
+        text-align: center;
+    }
+
+    .mat-form-field-wrapper {
+        height: 52px;
     }

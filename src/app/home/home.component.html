@@ -4,7 +4,7 @@
 <div class="date-text">
     <div class="date-picker" >
         <mat-form-field matTooltip="Select the date" class="date-form" appearance="fill">
-            <input matInput [matDatepicker]="picker" autocomplete="off"  [(ngModel)]="reportDate" placeholder="Select the Date">
+            <input matInput [matDatepicker]="picker" autocomplete="off"  [(ngModel)]="reportDate" placeholder="Select Date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #ref
             (closed)="toggle(ref)" [touchUi]="true" #picker></mat-datepicker>
@@ -13,6 +13,7 @@
         <button *ngIf="showGenerateButton" (click) = "generateReport()" class="generate-report btn btn-primary">
             Error Report<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
         </button>
+        <mat-toolbar color="primary" *ngIf="errorMessage">Downstream Error!! Please try later.</mat-toolbar>
         <mat-toolbar color="primary" *ngIf="listEmpty">No records found.</mat-toolbar>
     </div>
 
